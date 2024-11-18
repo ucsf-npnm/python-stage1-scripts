@@ -1,7 +1,7 @@
 # Stage 1 scripts:
 Scripts to tabulate, analyze, visualize Stage 1 data (neural/behavioral)
 
-## extract-nk-annotations
+## Extract info from NK annotations
 Extract auto-generated annotations in CSV files exported from NK-CDS
 version v1.0
 author: Daniela Astudillo
