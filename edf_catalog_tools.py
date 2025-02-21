@@ -59,8 +59,9 @@ def ExtractFileMetadata(PatientID, FilePathList):
         edf_path.append(FilePathList[i])
         h5_path.append(pathlib.Path('/data_store0/presidio/nihon_kohden', PatientID, 'nkhdf5/edf_to_hdf5', h5_string))
         timezone.append('US/Pacific')
-        print(f'File {i+1} completed')
+        print(f'File {i+1} of {len(FilePathList)} completed')
         print('')
+        raw.close()
 
     DictObj = {
             'edf_name': edf_name,

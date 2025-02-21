@@ -20,11 +20,17 @@ outdir         = pathlib.Path(stage1_maindir, patient_id, 'nkhdf5') #directory s
 
 # Main code #
 edf_file_paths = GetFilePaths(edf_dir, 'edf')
+if patient_id == 'PR01':
+    del edf_file_paths[0]
+if patient_id == 'PR05':
+    del edf_file_paths[1777]
 edf_dict       = ExtractFileMetadata(patient_id, edf_file_paths)
 edf_catalog    = pd.DataFrame(edf_dict)
 
 edf_catalog.to_csv(pathlib.Path(outdir, f'{patient_id}_edf_catalog.csv'), index=False)
+del edf_dict, edf_catalog
 print(f'{patient_id}_edf_catalog.csv has been created and saved in {outdir}')
+print('')
 
 """
 
